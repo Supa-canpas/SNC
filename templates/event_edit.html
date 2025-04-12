@@ -1,0 +1,25 @@
+<!--編集画面
+追加したいもの
+・カレンダーの大枠
+・カレンダーの日付１つ１つが予定を追加できるようになっている。
+→追加するたびにmyDBに送信
+→決定ボタンを押すことで画面遷移
+
+event=event,id=id
+-->
+{% extends "base.html" %}
+{% block content %}
+<h1>イベント編集ページ</h1>
+
+<form method="post">
+    <label for="event_name">イベント名:</label>
+    <input type="text" name="event_name" value= {{ event.event_name }}>
+    <br>
+    <label for="event_time">時間:</label>
+    <input type="time" name="event_time" value= {{ event.event_time }} >
+    <br>
+    <button type="submit">更新</button>
+</form>
+{% endblock %}
+
+<!--formにactionが無い場合、submitの送信先は自分を指す-->

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>イベント一覧</h2>
+    <ul>
+        {% for event in my_data %}
+        <li style="border: 1px solid #ccc; padding: 8px; margin: 5px 0; display: inline-block; width: fit-content;">
+            イベント名:{{ event.event_name }}<br>
+            時間:{{ event.event_time }}
+            <a href="/{{event.id}}/event_edit" role = "button">編集</a>
+            <a href="/{{event.id}}/event_delete" role = "button">削除</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/" role = "button">戻る</a>
+{% endblock %}

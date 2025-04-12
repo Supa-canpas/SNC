@@ -1,0 +1,22 @@
+<!--編集画面
+追加したいもの
+・カレンダーの大枠
+・カレンダーの日付１つ１つが予定を追加できるようになっている。
+→追加するたびにmyDBに送信
+→決定ボタンを押すことで画面遷移
+-->
+{% extends "base.html" %}
+{% block content %}
+<h1>イベント追加ページ</h1>
+
+<form method="post">
+    <label for="event_name">イベント名:</label>
+    <input type="text" name="event_name">
+    <br>
+    <label for="event_time">時間:</label>
+    <input type="time" name="event_time">
+    <br>
+    <button type="submit">追加</button>
+</form>
+<a href="/" role = "button">戻る</a>
+{% endblock %}
