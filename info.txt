@@ -1,0 +1,22 @@
+mkdir myself 
+cd myself
+
+クローン用: https://github.com/Supa-canpas/SNC.git
+コマンド:git clone https://github.com/Supa-canpas/SNC.git    
+
+仮想環境有効化用
+deactivate
+venv_snc\Scripts\activate  
+
+仮想環境作成用: py -3 -m venv venv_snc  
+
+最初にインストールすべきもの
+pip install Flask
+pip install flask_sqlalchemy 
+pip install pytz
+
+データベースの作成
+db.create_all()
+
+アプリ起動用
+flask --app app run  
