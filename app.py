@@ -23,7 +23,11 @@ class Event(db.Model):
     event_time = db.Column(db.String(30),nullable=False)
     user_name = db.Column(db.String(30),nullable=False)
     calender_name = db.Column(db.String(30),nullable=False)
-    save_date = db.Column(db.DateTime,nullable=False, default=datetime.now(pytz.timezone('Asia/Tokyo')))
+    save_date = db.Column(
+        db.DateTime,
+        nullable=False,
+        default=lambda: datetime.now(pytz.timezone("Asia/Tokyo"))
+    )
 
 @app.route("/")
 def home():
